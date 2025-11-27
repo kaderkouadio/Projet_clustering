@@ -317,7 +317,7 @@ footer_html = """
 </style>
 
 <div class="footer-container">
-    <span class="footer-name">KOUADIO Kader</span>
+    <span class="footer-name"> KOUADIO Kader</span>
     <span class="footer-badge">✔ Vérifié</span>
     <div class="footer-role">
         Économiste • Analyste Financier • Data Analyst • Développeur BI & Intelligence Artificielle

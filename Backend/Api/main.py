@@ -467,29 +467,6 @@ def predict_cluster(req: ClientData):
     return PredictClusterResponse(cluster=cluster, probability=probability, model_info=model_info)
 
 
-# @app.post("/cluster", summary="Clustering KMeans non supervisé (batch)", tags=["Prédiction"])
-# async def assign_cluster(
-#     clients: List[ClientData] = Body(..., embed=True)
-# ):
-#     """
-#     Accepte directement une liste de clients → [ {...}, {...} ]
-#     embed=True → plus jamais de 422 !
-#     """
-#     if not kmeans_model or not preprocessor:
-#         raise HTTPException(status_code=500, detail="KMeans ou préprocesseur non chargé")
-
-#     df = pd.DataFrame([c.dict() for c in clients])
-
-#     allowed_edu = ["Basic", "2n Cycle", "Graduation", "Master", "PhD"]
-#     allowed_marital = ["Single", "Married", "Divorced", "Together", "Widow"]
-
-#     df["Education"] = df["Education"].astype(str).apply(lambda x: x if x in allowed_edu else "Other")
-#     df["Marital_Status"] = df["Marital_Status"].astype(str).apply(lambda x: x if x in allowed_marital else "Other")
-
-#     X = preprocessor.transform(df)
-#     clusters = kmeans_model.predict(X).tolist()
-
-#     return {"status": "success", "clusters": clusters}
 
 
 @app.post("/cluster", 
